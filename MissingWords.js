@@ -1,19 +1,24 @@
-fs = require('fs');
+console.log("-----------Start-----------");
 
-fs.readFile('words.txt', 'utf8', (err, data) => {
-    if (err) {
-      console.error('Error reading the file:', err);
-      return;
-    }
-  
-    // Split the content into an array of words
-    const wordsArray = data.split(/\s+/);
-  
-    // Get the first and last words
-    const firstWord = wordsArray[0];
-    const lastWord = wordsArray[wordsArray.length - 1];
-  
-    // Display the result
-    console.log('First word:', firstWord);
-    console.log('Last word:', lastWord);
-  });
+word = "coding";
+let begins_with = [];
+let ends_with = [];
+let contains = [];
+
+let checking = word.split("")
+
+fs = require('fs');
+const file = fs.readFileSync('words.txt', {encoding: 'utf8', flag:'r'});
+words = file.split(" ");
+for (let i=0; i < words.length; i++) {
+  if (words[i].includes(word)) {
+    contains.push(words[i]);
+  }
+  // itterate through a string
+  // Array.from(words[i]).forEach(letter => {
+     
+  // });
+}
+console.log(contains);
+
+console.log("------------End------------");
