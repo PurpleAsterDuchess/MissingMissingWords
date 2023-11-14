@@ -1,9 +1,16 @@
-console.log("-----------Start-----------");
+const prompt = require('prompt-sync')();
 
-const word = "coding";
+// const word = "coding";
 const begins_with = [];
 const ends_with = [];
 const contains = [];
+
+
+console.log("-----------Start-----------");
+
+let word = prompt('What is your word?');
+word = word.toLowerCase();
+console.log(word);
 
 let checking = word.split("")
 
